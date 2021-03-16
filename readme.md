@@ -4,6 +4,7 @@
 
 - 根据[北大标识管理办公室的配色指引](https://vim.pku.edu.cn/docs/20171026163443134569.pdf)进行配色
 - 在首页加入了北京大学Logo
+- 在页面右上角加入北京大学Logo（代码来源于 [xiaoxuan-yu/PKU-Beamer-Metropolis](https://github.com/xiaoxuan-yu/PKU-Beamer-Metropolis)）
 
 模板的中文填充部分来源于[PKU-Beamer-Theme](https://github.com/inFaaa/PKU-Beamer-Theme)和 [THU-Beamer-Theme](https://github.com/Trinkle23897/THU-Beamer-Theme)。
 
@@ -11,4 +12,4 @@
 
 ![example_1](example/example_1.png)
 
-![example_2](example/example_2.png)
+![example_1](example/example_2.png)

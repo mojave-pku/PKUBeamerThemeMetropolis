@@ -63,10 +63,36 @@
 
 \metroset{titleformat=smallcaps, progressbar=foot}
 
+\newsavebox{\mybox}
 \makeatletter
 \setlength{\metropolis@progressinheadfoot@linewidth}{2pt}
 \setlength{\metropolis@titleseparator@linewidth}{2pt}
 \setlength{\metropolis@progressonsectionpage@linewidth}{2pt}
+
+\setbeamertemplate{frametitle}{%
+  \nointerlineskip%
+  \savebox{\mybox}{%
+      \begin{beamercolorbox}[%
+          wd=\paperwidth,%
+          sep=0pt,%
+          leftskip=\metropolis@frametitle@padding,%
+          rightskip=\metropolis@frametitle@padding,%
+        ]{frametitle}%
+      \metropolis@frametitlestrut@start\insertframetitle\metropolis@frametitlestrut@end%
+      \end{beamercolorbox}%
+    }
+  \begin{beamercolorbox}[%
+      wd=\paperwidth,%
+      sep=0pt,%
+      leftskip=\metropolis@frametitle@padding,%
+      rightskip=\metropolis@frametitle@padding,%
+    ]{frametitle}%
+  \metropolis@frametitlestrut@start\insertframetitle\metropolis@frametitlestrut@end%
+  \hfill%
+  \raisebox{-\metropolis@frametitle@padding}{\includegraphics[height=\dimexpr\ht\mybox+\metropolis@frametitle@padding\relax]{logo_title.png}}%
+    \hspace*{-\metropolis@frametitle@padding}
+  \end{beamercolorbox}%
+}
 
 \setbeamerfont{author}{family=\heiti,size=\fontsize{10pt}{10pt}\selectfont,series=\bfseries}
 \setbeamerfont{institute}{family=\heiti,size=\fontsize{9pt}{9pt}\selectfont}
@@ -106,7 +132,7 @@
     \begin{itemize}
         \item 有一些 \LaTeX{} 自带的
         \item 有一些Tsinghua的
-        \item 在\hyperlink{https://www.overleaf.com/latex/templates/unc-charlotte-beamer-theme/rnwqwjmrnmsk}{\blue{UNC-charlotte-beamer}}的基础上作了修改，配色依据为\hyperlink{https://vim.pku.edu.cn/docs/20171026163443134569.pdf }{\blue{北大标识管理办公室的配色指引}}，使用了北大logo
+        \item 在\hyperlink{https://www.overleaf.com/latex/templates/unc-charlotte-beamer-theme/rnwqwjmrnmsk}{\blue{UNC-charlotte-beamer}}的基础上作了修改，配色依据为\hyperlink{https://vim.pku.edu.cn/docs/20171026163443134569.pdf}{\blue{北大标识管理办公室的配色指引}}，使用了北大logo
         \item 中文填充内容来自\hyperlink{https://github.com/inFaaa/PKU-Beamer-Theme}{\blue{PKU-Beamer-Theme}}和\hyperlink{https://github.com/Trinkle23897/THU-Beamer-Theme}{\blue{THU-Beamer-Theme}}
     \end{itemize}
 \end{frame}
